@@ -1,7 +1,10 @@
 package org.example
 
-fun main() {
-    println("Hello World!")
+fun runCommon() {
+    println("Hello, enter your name!")
     val name = readln()
-    println("Hello $name!")
+
+    name.replace(" ", "").let {
+        println("Hello $name, your name contains ${it.length} letters")
+    }
 }

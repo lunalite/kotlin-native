@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.cli.jvm.main
-
 plugins {
     kotlin("multiplatform") version "2.0.0"
 }
@@ -12,7 +10,9 @@ repositories {
 }
 
 kotlin {
-    jvm("jvm") {}
+    jvm("jvm") {
+
+    }
 
     macosX64("macos") {
         binaries {
@@ -22,10 +22,11 @@ kotlin {
             }
         }
     }
-//    macosX64("native") {
-//        binaries {
-//            executable()
-//        }
-//    }
 
+}
+
+tasks {
+    withType<JavaExec> {
+        standardInput = System.`in`
+    }
 }
