@@ -14,7 +14,7 @@ kotlin {
 
     }
 
-    macosX64("macos") {
+    macosArm64("macos") {
         binaries {
             executable {
                 entryPoint = "org.example.main"
